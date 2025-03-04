@@ -1,0 +1,3 @@
+Wie kann man buttons automatisch bei Größenänderungen höher machen (setgrwothpolicy ???)
+row und column span
+warum geht der benannte Parameter alignment und die anderen nicht?

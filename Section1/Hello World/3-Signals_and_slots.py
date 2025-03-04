@@ -1,6 +1,6 @@
 # Tutorial https://www.pythontutorial.net/pyqt/pyqt-signals-slots/
 
-# Vorausstetzung: # pip install pyqt6
+# Voraussetzung: # pip install pyqt6
 
 import sys
 from PyQt6.QtWidgets import (
@@ -37,10 +37,6 @@ class MainWindow(QWidget):
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-
-    # create the main window and display it
+    app = QApplication(sys.argv)   
     window = MainWindow()
-
-    # start the event loop
     sys.exit(app.exec())

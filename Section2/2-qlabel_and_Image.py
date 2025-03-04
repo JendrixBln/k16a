@@ -1,3 +1,7 @@
+# Tutorial https://www.pythontutorial.net/pyqt/pyqt-qlabel/
+
+# Voraussetzung: # pip install pyqt6
+
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt6.QtGui import QPixmap                                         # Pixmap Objekt in QtGui (kein Widget)
@@ -7,11 +11,11 @@ class MainWindow(QWidget):
         super().__init__(*args, **kwargs)
 
         self.setWindowTitle('PyQt Label Widget')
-        self.setGeometry(100, 100, 320, 210)                            # Größe des Objekts setzen. Self ist das Fenster, wir müssen die Größe ändern, damit das Label platz hat
+        self.setGeometry(100, 100, 320, 210)                            
 
         
         label = QLabel()                                                # Erzeugen des QLabel-Objekts, ohne Text
-        pixmap = QPixmap('logo-zm.png')                              # laden des Bildes
+        pixmap = QPixmap('logo-zm.png')                                 # Laden des Bildes
         label.setPixmap(pixmap)
 
 
@@ -22,10 +26,6 @@ class MainWindow(QWidget):
         self.show()                                                     # Fenster zeigen
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-
-    # create the main window and display it
+    app = QApplication(sys.argv)   
     window = MainWindow()
-
-    # start the event loop
     sys.exit(app.exec())

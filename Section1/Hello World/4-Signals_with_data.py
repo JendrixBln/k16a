@@ -1,6 +1,6 @@
 # Tutorial https://www.pythontutorial.net/pyqt/pyqt-signals-slots/
 
-# Vorausstetzung: # pip install pyqt6
+# Voraussetzung: # pip install pyqt6
 
 import sys
 from PyQt6.QtWidgets import (
@@ -22,7 +22,7 @@ class MainWindow(QWidget):
         super().__init__(*args, **kwargs)
 
         self.setWindowTitle('Qt Signals with data')
-        self.setGeometry(100, 100, 320, 210)                        # Größe des Objekts setzen. Self ist das Fenster, wir müssen die Größe ändern, damit das Label platz hat
+        self.setGeometry(100, 100, 320, 210)                        # Größe des Objekts setzen. Self ist das Fenster
         
          # create widgets
         label = QLabel()
@@ -38,12 +38,7 @@ class MainWindow(QWidget):
         # show the window
         self.show()
 
-
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-
-    # create the main window and display it
+    app = QApplication(sys.argv)   
     window = MainWindow()
-
-    # start the event loop
     sys.exit(app.exec())

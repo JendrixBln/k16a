@@ -4,6 +4,7 @@
 
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
+from PyQt6.QtGui import QMovie                                          # Movie-Objekt in QtGui (kein Widget)
 
 class MainWindow(QWidget):
     def __init__(self, *args, **kwargs):
@@ -12,13 +13,16 @@ class MainWindow(QWidget):
         self.setWindowTitle('PyQt Label Widget')
         self.setGeometry(100, 100, 320, 210)                            
 
-        label = QLabel('This is a QLabel widget')                       # Erzeugen des QLabel-Objekts. De Konstruktor enthält die Beschriftung (unterschiedlich von Objekt zu Objekt)
+        label = QLabel()                                                # Erzeugen des QLabel-Objekts, ohne Text
+        video = QMovie('b2f.gif')                                       # laden des animierten Gifs (von https://knowyourmeme.com/photos/1033612-back-to-the-future-day)
+        label.setMovie(video)                                           # Platzieren im label
+        video.start()                                                   # Starten der Animation
 
         layout = QVBoxLayout()                                          # (Layout siehe XXX)
         layout.addWidget(label)                                         
         self.setLayout(layout)
 
-        self.show()                                                     # Fenster zeigen
+        self.show()                                                    
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)   
