@@ -29,8 +29,7 @@ class MainWindow(QWidget):
         layout.addWidget(QPushButton('Schließen'), 2, 1,                        # Spalte 1, Zeile 2
                          alignment=Qt.AlignmentFlag.AlignRight)
 
-        layout.addWidget(QLineEdit(),3, 0, 2,2, alignment=Qt.AlignmentFlag.AlignRight)
-
+        layout.addWidget(QLabel("Benutzername und Passwort eingeben"), 3, 0, 1, 2) # Spalten 0 und 1, Zeile 3 ->kein Alignment setzen!
 
 
         self.show()
