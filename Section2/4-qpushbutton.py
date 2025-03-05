@@ -26,7 +26,7 @@ class AppWindow(QWidget):
         btntoggle.setCheckable(True)
         btntoggle.clicked.connect(self.btntoggle_clicked)
     
-        layout = QVBoxLayout()                                          # (Layout siehe XXX)
+        layout = QVBoxLayout()                                          # (Layout siehe Section3)
         layout.addWidget(btntext)                                         
         layout.addWidget(btnimage)  
         layout.addWidget(btntoggle)

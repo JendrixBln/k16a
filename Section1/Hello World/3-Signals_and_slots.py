@@ -25,7 +25,7 @@ class AppWindow(QWidget):
         button = QPushButton('Click me')                                        # Button anlegen 
         button.clicked.connect(self.button_clicked)                             # und das Event "Clicked" des Buttons mit einem Slot (einer Funktion der Klasse) verbinden
 
-        # Objekte am besten in einem Layout platzieren (siehe XXX)
+        # Objekte am besten in einem Layout platzieren (siehe Section3)
         layout = QVBoxLayout()
         self.setLayout(layout)
         layout.addWidget(button)

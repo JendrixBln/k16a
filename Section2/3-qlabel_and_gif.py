@@ -18,7 +18,7 @@ class AppWindow(QWidget):
         label.setMovie(video)                                           # Platzieren im label
         video.start()                                                   # Starten der Animation
 
-        layout = QVBoxLayout()                                          # (Layout siehe XXX)
+        layout = QVBoxLayout()                                          # (Layout siehe Section3)
         layout.addWidget(label)                                         
         self.setLayout(layout)
 

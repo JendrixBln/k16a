@@ -30,7 +30,7 @@ class AppWindow(QWidget):
         line_edit.textChanged.connect(label.setText)                # das Signal textChanged sendet den Text im Eingabefeld an den verbundenen Slot. Der Slot setText wiederum erwartet 
                                                                     # genau einen Text. Dadurch können die Daten weitergegeben werden. 
         # place the widgets
-        layout = QVBoxLayout()                                      # Layout siehe XXX
+        layout = QVBoxLayout()                                      # Layout siehe Section3
         layout.addWidget(label)
         layout.addWidget(line_edit)
         self.setLayout(layout)

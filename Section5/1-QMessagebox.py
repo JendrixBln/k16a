@@ -34,14 +34,15 @@ class AppWindow(QWidget):
         # show the window
         self.show()
     def quit(self):
-        answer = QMessageBox.question(self,'Bestätigung','Programm beenden?', QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)      
+        answer =  QMessageBox.question(self,'Bestätigung','Programm beenden?'
+                , QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)                   # | ist hier bitweises OR, nicht PIPE
         if answer == QMessageBox.StandardButton.Yes:
             QMessageBox.information(self, 'Information',"Du hast 'ja' gesagt, ich schließe das Programm!", QMessageBox.StandardButton.Ok)
             self.close()
         else:
             QMessageBox.information(self, 'Information',"Du hast 'nein' gesagt, also bleibe ich aktiv.", QMessageBox.StandardButton.Ok)
     def info(self):
-        QMessageBox.information(self, 'Information', 'So sieht eine information aus.')
+        QMessageBox.information(self, 'Information', 'So sieht eine information aus.')              # OK ist default
     def warning(self):
         QMessageBox.warning(self, 'Information', 'Warnmeldungen sehen so aus.')
     def error(self):

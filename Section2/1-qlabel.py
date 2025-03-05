@@ -14,7 +14,7 @@ class AppWindow(QWidget):
 
         label = QLabel('This is a QLabel widget')                       # Erzeugen des QLabel-Objekts. De Konstruktor enthält die Beschriftung (unterschiedlich von Objekt zu Objekt)
 
-        layout = QVBoxLayout()                                          # (Layout siehe XXX)
+        layout = QVBoxLayout()                                          # (Layout siehe Section3)
         layout.addWidget(label)                                         
         self.setLayout(layout)
 

@@ -4,6 +4,7 @@
 # Aufgabe 2: Das Beispiel hier lässt Euch mehrere Dateien auswählen. Erweitert das Programm so, dass Ihr EINE vorhandene Word-Datei auswählen könnt
 # Aufgabe 3: Ergänzt das Programm, sodass man eine Datei zum Speichern auswählen (oder neu anlegen) kann
 
+# Erstellt also 2 neue Programme
 
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout, QFileDialog

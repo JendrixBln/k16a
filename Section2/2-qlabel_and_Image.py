@@ -19,7 +19,7 @@ class AppWindow(QWidget):
         label.setPixmap(pixmap)
 
 
-        layout = QVBoxLayout()                                          # (Layout siehe XXX)
+        layout = QVBoxLayout()                                          # (Layout siehe Section3)
         layout.addWidget(label)                                         
         self.setLayout(layout)
 
