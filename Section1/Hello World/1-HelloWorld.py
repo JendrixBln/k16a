@@ -1,6 +1,6 @@
 # Tutorial https://www.pythontutorial.net/pyqt/pyqt-hello-world/
 
-# Vorausstetzung: # pip install pyqt6
+# Voraussetzung: # pip install pyqt6
 
 from PyQt6.QtWidgets import QApplication, QWidget           
 
