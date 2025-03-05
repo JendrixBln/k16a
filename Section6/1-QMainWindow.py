@@ -1,14 +1,12 @@
 #Tutorial https://www.pythontutorial.net/pyqt/pyqt-qmainwindow/
 # ACHTUNG: Leider ein paar Fehler drin
 
-#QWidget bietet ein einfaches Fenster. Ein vollumfängliches Anwendungsfenster besitzt aber Menüs, Toolbars und eine Statusbar, die man hinzufügen oder weglassen kann
-
+# QWidget bietet ein einfaches Fenster oder kann als unsichtbarer Container verwendet werden. 
+# Ein vollumfängliches Anwendungsfenster besitzt aber Menüs, Toolbars und eine Statusbar, die man hinzufügen oder weglassen kann
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QToolBar, QLineEdit, QMainWindow, QGroupBox, QFormLayout, QMessageBox
+from PyQt6.QtWidgets import QApplication, QStatusBar, QPushButton, QToolBar, QLineEdit, QMainWindow, QGroupBox, QFormLayout, QMessageBox
 from PyQt6.QtGui import QIcon, QAction
-from PyQt6.QtCore import Qt
-from pathlib import Path
 
 class AppWindow(QMainWindow):
     def __init__(self, *args, **kwargs):
@@ -47,11 +45,25 @@ class AppWindow(QMainWindow):
         #mymenuFileRecent.addAction("Projektbericht.docx", lambda: self.showMenuChoice("Projektbericht.docx"))
         #mymenuFileRecent.addAction("PSP.TDL", lambda: self.showMenuChoice("PSP.TDL"))
 
-        myToolbar = QToolBar("Titel wozu?")                                         # Toolbar erzeugen 
+        myToolbar = QToolBar("Zeige Toolbar")                                         # Toolbar erzeugen 
         self.addToolBar(myToolbar)                                                  # und dem QMainWindow hinzufügen
-        fileOpenAction = QAction(QIcon("./open.png"),  )
         
-        myToolbar.addActions(fileOpenAction)
+        fileOpenAction = QAction(QIcon("./open.png"), "Öffnen", self)               # Wir brauchen hier wieder Instanzvariablen, 
+        fileOpenAction.setShortcut("Ctrl+O")                                        # Um einen Shortcut anlegen zu können
+        fileOpenAction.triggered.connect(lambda: self.showMenuChoice("Öffnen"))     # und um das Signal triggered an den Slot showMenuChoice binden zu können
+        myToolbar.addAction(fileOpenAction)                                         # Jetzt endlich können wir die Toolbar Action zur Toolbar hinzufügen
+
+        fileCloseAction = QAction(QIcon("./close.png"), "Schließen", self)          # Jetzt noch für FileClose-Action
+        fileCloseAction.setShortcut("Ctrl+F4")                                      
+        fileCloseAction.triggered.connect(lambda: self.showMenuChoice("Schließen"))     
+        myToolbar.addAction(fileCloseAction)                                         
+        #SHOWME: fileCloseAction.setToolTip("Strg+F4")                  
+        #SHOWME: setShortcut("Alt+F4") auf Menü, Änderung, wir brauchen eine Instanzvariable (oben)
+        
+        self.myStatusBar=QStatusBar()
+        self.setStatusBar(self.myStatusBar)
+        self.myStatusBar.showMessage('Nicht angemeldet',5000)                       # Einer StatusBar können Widgets hinzugefügt werden (out of scope)
+
         self.show()
 
     def showMenuChoice(self, value):

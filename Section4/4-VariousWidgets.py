@@ -20,24 +20,24 @@ class AppWindow(QWidget):
         self.setLayout(layout)
 
         spin = QSpinBox(minimum=1, maximum=200, value=100, prefix='€')
-        layout.addRow("Preis:", spin)
+        layout.addRow("Spin:", spin)
 
         self.date = QDateEdit(self)
-        layout.addRow('Datum:', self.date)
+        layout.addRow('DateEdit:', self.date)
         
         self.time = QTimeEdit(self)
-        layout.addRow('Uhrzeit:', self.time)
+        layout.addRow('TimeEdit:', self.time)
 
         self.datetime = QDateTimeEdit(self)
-        layout.addRow('Datum/Uhrzeit:', self.datetime)
+        layout.addRow('DateTime:', self.datetime)
 
         self.vertslider = QSlider(Qt.Orientation.Vertical, self)
         self.vertslider.setRange(0,100)
-        layout.addRow('Werte 1-100:', self.vertslider)
+        layout.addRow('Vert. Slider 1-100:', self.vertslider)
         
         self.horizslider = QSlider(Qt.Orientation.Horizontal, self)
         self.horizslider.setRange(0,100)
-        layout.addRow('Werte 50-60:', self.horizslider)        
+        layout.addRow('Horiz. Slider 50-60:', self.horizslider)        
 
         self.progressbar = QProgressBar(self)
         self.progressbar.setRange(1,100)

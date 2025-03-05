@@ -14,7 +14,7 @@ class AppWindow(QWidget):
         self.setGeometry(100, 100, 320, 210)                            
 
         label = QLabel()                                                # Erzeugen des QLabel-Objekts, ohne Text
-        video = QMovie('b2f.gif')                                       # laden des animierten Gifs (von https://knowyourmeme.com/photos/1033612-back-to-the-future-day)
+        video = QMovie('giphy.gif')                                     # laden des animierten Gifs (von https://knowyourmeme.com/photos/1033612-back-to-the-future-day)
         label.setMovie(video)                                           # Platzieren im label
         video.start()                                                   # Starten der Animation
 
