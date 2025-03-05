@@ -1,38 +1,56 @@
 
 # Quelle: https://www.pythontutorial.net/pyqt
-# Aufgabe: Verschafft Euch einen kurzen Überblick über die Steuerelemente und schaut ins Tutorial. Stellt sicher, dass Ihr bei Bedarf
-#          schnell auf benötigte Informationen zugreifen könnt
+# Aufgabe 1: Verschafft Euch einen kurzen Überblick über die Steuerelemente und schaut ins Tutorial. 
+#            Stellt sicher, dass Ihr bei Bedarf schnell auf benötigte Informationen zugreifen könnt
+# Aufgabe 2: Recherchiert je Widget mindestens ein Ereignis, welches abgefangen werden sollte. 
+#            Schreibt eine Slot-Funktion und verbindet sie jeweils mit dem richtigen Signal
 
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QRadioButton, QLabel, QFormLayout, QComboBox, QSpinBox
+from PyQt6.QtWidgets import *                                               # man kann auch einfach alles importieren
 from PyQt6.QtCore import Qt
 
 
-class MainWindow(QWidget):
+class AppWindow(QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.setWindowTitle('Verschiedene Steuerelemente')
+        self.setWindowTitle('PyQT Verschiedene Steuerelemente')
         
-        # create a grid layout
         layout = QFormLayout()
         self.setLayout(layout)
 
         spin = QSpinBox(minimum=1, maximum=200, value=100, prefix='€')
         layout.addRow("Preis:", spin)
 
+        self.date = QDateEdit(self)
+        layout.addRow('Datum:', self.date)
         
+        self.time = QTimeEdit(self)
+        layout.addRow('Uhrzeit:', self.time)
+
+        self.datetime = QDateTimeEdit(self)
+        layout.addRow('Datum/Uhrzeit:', self.datetime)
+
+        self.vertslider = QSlider(Qt.Orientation.Vertical, self)
+        self.vertslider.setRange(0,100)
+        layout.addRow('Werte 1-100:', self.vertslider)
         
+        self.horizslider = QSlider(Qt.Orientation.Horizontal, self)
+        self.horizslider.setRange(0,100)
+        layout.addRow('Werte 50-60:', self.horizslider)        
+
+        self.progressbar = QProgressBar(self)
+        self.progressbar.setRange(1,100)
+        self.progressbar.setValue(50)
+        layout.addRow('Fortschritt:', self.progressbar)        
+
+        text_edit = QTextEdit(self)
+        layout.addRow("Multiline Text:", text_edit)
 
         # show the window
         self.show()
 
-    def update(self):
-        self.result_label.setText(
-            f'You selected {self.cb_platform.currentText()}')
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    window = MainWindow()
+    window = AppWindow()
     sys.exit(app.exec())

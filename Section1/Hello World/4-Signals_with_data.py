@@ -17,7 +17,7 @@ from PyQt6.QtWidgets import (
 # signal: Wenn ein Ereignis ausgelöst wird, erzeugt ein Widget ein Signal. QObjekt ist die Basisklasse, die Signale senden und empfangen kann. QWidget erbt u.a. von QObject
 # slot: eine Funktion oder Methode, die Signale empfangen und auf sie antworten kann
 
-class MainWindow(QWidget):
+class AppWindow(QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -40,5 +40,5 @@ class MainWindow(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)   
-    window = MainWindow()
+    window = AppWindow()
     sys.exit(app.exec())

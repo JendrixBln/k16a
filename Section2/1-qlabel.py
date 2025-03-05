@@ -5,7 +5,7 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 
-class MainWindow(QWidget):
+class AppWindow(QWidget):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -22,5 +22,5 @@ class MainWindow(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)   
-    window = MainWindow()
+    window = AppWindow()
     sys.exit(app.exec())
