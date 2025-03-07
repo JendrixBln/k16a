@@ -5,7 +5,7 @@
 import sys                                                          # sys: Informationen in Konstanten, Funktionen und Methoden über den Python-Interpreter
 from PyQt6.QtWidgets import QApplication, QWidget           
 
-class AppWindow(QWidget):                                          # Erzeuge Klasse und erbe von QWidget
+class AppWindow(QWidget):                                           # Erzeuge Klasse und erbe von QWidget
     def __init__(self, *args, **kwargs):                            # Konstruktor der Klasse, beliebige unbenannte und benannte Argumente *args und **kwargs (Key-Value-Pairs)
         super().__init__(*args, **kwargs)                           # Aufruf Elternklasse, falls Vererbung genutzt wird
                                                                     
